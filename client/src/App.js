@@ -1,6 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Home from './components/Home';
+import PostInput from './components/PostInput';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+
+const link = {
+  width: '100px',
+  padding: '12px',
+  margin: '0 6px 6px',
+  background: 'blue',
+  textDecoration: 'blue',
+  color: 'white'
+}
+
+const Navbar = () =>
+  <div>
+    <NavLink
+      to="/"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+    >Home</NavLink>
+    <NavLink
+      to="/new"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkblue'
+      }}
+    >Start New Discussion</NavLink>
+  </div>;
 
 class App extends Component {
   render() {
@@ -8,10 +39,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Community Space</h1>
+          <Navbar />
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="App-body">
+          <Route exact path="/" component={Home} />
+          <Route exact path="/new" component={PostInput} />
+        </div>
       </div>
     );
   }
