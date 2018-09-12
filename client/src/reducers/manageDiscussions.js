@@ -10,7 +10,7 @@ export default function manageDiscussions(state={discussions: []}, action) {
             }
             return { ...state, discussions: [...state.discussions, discussion]}
         
-        case 'DELETE_DISCUSSIONS':
+        case 'DELETE_DISCUSSION':
             return { ...state, discussions: state.discussions.filter(discussion => discussion.id !== action.id) }
         
         default:
