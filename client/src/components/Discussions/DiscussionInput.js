@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router'
 
 class DiscussionInput extends Component {
 
@@ -18,7 +19,8 @@ class DiscussionInput extends Component {
         this.props.addDiscussion(this.state.text);
         this.setState({
             text: ''
-        });
+        })
+        this.props.history.push('/')
     }
 
     render() {
@@ -42,5 +44,5 @@ const mapDispatchToProps = dispatch => ({
     addDiscussion: text => dispatch({type: 'ADD_DISCUSSION', text}),
 })
   
-export default connect(null, mapDispatchToProps)(DiscussionInput);
+export default withRouter(connect(null, mapDispatchToProps)(DiscussionInput));
 

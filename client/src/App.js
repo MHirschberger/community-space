@@ -3,7 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import { Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import DiscussionInput from './components/DiscussionInput';
+import DiscussionInput from './components/Discussions/DiscussionInput';
 
 class App extends Component {
   render() {

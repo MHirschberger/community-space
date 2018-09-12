@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Discussions from '../components/Discussions';
+import Discussions from '../components/Discussions/Discussions';
 import { connect } from 'react-redux';
 
 class DiscussionsContainer extends Component {
