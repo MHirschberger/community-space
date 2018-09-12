@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home';
-import DiscussionInput from './components/DiscussionInput';
 import { Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import DiscussionInput from './components/DiscussionInput';
 
 class App extends Component {
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Discussions from '../components/restaurants/Restaurants'
+import Discussions from '../components/Discussions';
 import { connect } from 'react-redux';
 
 class DiscussionsContainer extends Component {
@@ -7,7 +7,6 @@ class DiscussionsContainer extends Component {
   render() {
     return (
       <div>
-        <DiscussionInput addDiscussion = {this.props.addDiscussion}/>
         <Discussions discussions={this.props.discussions} deleteRestaurant={this.props.deleteDiscussion}/>
       </div>
     )
@@ -17,7 +16,6 @@ class DiscussionsContainer extends Component {
 const mapStateToProps = ({ discussions }) => ({ discussions })
 
 const mapDispatchToProps = dispatch => ({
-  addDiscussion: text => dispatch({type: 'ADD_DISCUSSION', text}),
   deleteDiscussion: id => dispatch({type: 'DELETE_DISCUSSION', id})
 })
 
