@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import ReviewsContainer from '../../containers/ReviewsContainer'
+import CommentsContainer from '../../containers/CommentsContainer'
 
 class Discussion extends Component {
 
@@ -11,7 +11,7 @@ class Discussion extends Component {
       <div>
         {discussion.text}
         <button onClick={() => this.props.deleteDiscussion(this.props.discussion.id)}> Delete </button>
-          {/* <ReviewsContainer restaurant={restaurant}/> */}
+          <CommentsContainer discussion={discussion}/>
       </div>
     );
   }
