@@ -12,8 +12,10 @@ class CommentsContainer extends Component {
   render() {
     return (
       <div>
-        <CommentInput addComment={this.props.addComment} discussionId={this.props.discussion.id} />
+        {/* {this.props.discussion.text} */}
+        <button onClick={() => this.props.deleteDiscussion(this.props.discussion.id)}> Delete </button>
         <Comments comments={this.filterComments()} deleteComment={this.props.deleteComment} />
+        <CommentInput addComment={this.props.addComment} discussionId={this.props.discussion.id} />
       </div>
     )
   }

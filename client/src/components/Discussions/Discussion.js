@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import CommentsContainer from '../../containers/CommentsContainer'
+import CommentsContainer from '../../containers/CommentsContainer';
+import { Link, Route } from 'react-router-dom';
 
 class Discussion extends Component {
 
@@ -9,9 +10,10 @@ class Discussion extends Component {
 
     return (
       <div>
-        {discussion.text}
-        <button onClick={() => this.props.deleteDiscussion(this.props.discussion.id)}> Delete </button>
-          <CommentsContainer discussion={discussion}/>
+        <p>{discussion.text}</p>
+        {/* <Link to={`/discussions/${this.props.discussion.id}/comments`}>See Comments</Link>
+        <Route exact path={`/discussions/${this.props.discussion.id}/comments`} render={() => <CommentsContainer discussion={discussion} deleteDiscussion={this.props.deleteDiscussion} />} />    */}
+        <CommentsContainer discussion={discussion} deleteDiscussion={this.props.deleteDiscussion} /> 
       </div>
     );
   }
