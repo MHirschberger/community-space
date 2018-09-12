@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class PostInput extends Component {
+export default class DiscussionInput extends Component {
     render() {
         return (
             <div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home';
-import PostInput from './components/PostInput';
+import DiscussionInput from './components/DiscussionInput';
 import { Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 
@@ -15,7 +15,7 @@ class App extends Component {
         </header>
         <div className="App-body">
           <Route exact path="/" component={Home} />
-          <Route exact path="/new" component={PostInput} />
+          <Route exact path="/new" component={DiscussionInput} />
         </div>
       </div>
     );
