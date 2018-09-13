@@ -4,6 +4,7 @@ class DiscussionsController < ApplicationController
     def index
         @discussions = Discussion.all
         respond_to do |format|
+            format.html 
             format.json { render json: @discussions }
         end
     end
