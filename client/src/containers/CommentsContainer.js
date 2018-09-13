@@ -7,7 +7,7 @@ import { fetchComments } from '../actions/commentActions';
 class CommentsContainer extends Component {
 
   componentDidMount() {
-    this.props.fetchComments(this.props.discussion.id);
+    this.props.fetchComments(this.props.match.params.discussion_id);
   }
 
     filterComments = () => (
@@ -15,12 +15,14 @@ class CommentsContainer extends Component {
     )
 
   render() {
+
+    const discussionId = this.props.match.params.discussion_id
     return (
       <div>
         {/* {this.props.discussion.text} */}
-        <button onClick={() => this.props.deleteDiscussion(this.props.discussion.id)}> Delete </button>
+        <button onClick={() => this.props.deleteDiscussion(discussionId)}> Delete </button>
         {this.props.comments.length > 0 ? <Comments comments={this.props.comments} deleteComment={this.props.deleteComment} /> : null}
-        <CommentInput addComment={this.props.addComment} discussionId={this.props.discussion.id} />
+        <CommentInput addComment={this.props.addComment} discussionId={discussionId} />
       </div>
     )
   }

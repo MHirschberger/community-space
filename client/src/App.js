@@ -4,6 +4,7 @@ import Home from './components/Home';
 import { Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import DiscussionInput from './components/Discussions/DiscussionInput';
+import CommentsContainer from './containers/CommentsContainer';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
         <div className="App-body">
           <Route exact path="/" component={Home} />
           <Route exact path="/new" component={DiscussionInput} />
+          <Route exact path="/discussions/:discussion_id/comments" component={CommentsContainer} />
         </div>
       </div>
     );
