@@ -6,9 +6,7 @@ class CommentsController < ApplicationController
     def index
         @discussion = Discussion.find(params[:discussion_id])
         @comments = @discussion.comments
-        respond_to do |format|
-            format.json { render json: @comments }
-        end
+        render json: @comments
         @comment = Comment.new(discussion_id: params[:discussion_id])
     end
 
@@ -17,13 +15,11 @@ class CommentsController < ApplicationController
     end
 
     def create
-        @comment = Post.new(comment_params)
+        @comment = Comment.new(comment_params)
 
         if @comment.save
             @discussion = Discussion.find(@comment.discussion_id)
-            respond_to do |format|
-                format.json { render json: @discussion }
-            end
+            render json: @discussion 
         end
         # else
         #     @course = @post.course
@@ -38,9 +34,7 @@ class CommentsController < ApplicationController
 
     def show
         @comment = Comment.find_by(id: params[:id])
-        respond_to do |format|
-            format.json { render json: @comment, include: ['discussion'] }
-        end
+        render json: @comment, include: ['discussion'] 
     end
 
     def destroy

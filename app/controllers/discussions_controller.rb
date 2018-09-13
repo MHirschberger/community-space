@@ -3,10 +3,7 @@ class DiscussionsController < ApplicationController
 
     def index
         @discussions = Discussion.all
-        respond_to do |format|
-            format.html 
-            format.json { render json: @discussions }
-        end
+        render json: @discussions 
     end
 
     def new
@@ -14,12 +11,11 @@ class DiscussionsController < ApplicationController
     end
 
     def create
-        @discussion = Discussion.new(post_params)
+        @discussion = Discussion.new(discussion_params)
+        @discussions = Discussion.all
         
         if @discussion.save
-            respond_to do |format|
-                format.json { render json: @post, include: ['user', 'course', 'course.university'] }
-            end
+            render json: @discussions
         end
         # else
         #     @course = @post.course
@@ -34,9 +30,7 @@ class DiscussionsController < ApplicationController
 
     def show
         @discussion = Discussion.find_by(id: params[:id])
-        respond_to do |format|
-            format.json { render discussion: @discussion }
-        end
+        render json: @discussion 
     end
 
     def destroy
