@@ -13,10 +13,10 @@ export default function manageDiscussions(state={loading: false, discussions: []
         case 'DELETE_DISCUSSION':
             return { ...state, discussions: state.discussions.filter(discussion => discussion.id !== action.id) }
 
-        case 'LOADING_CATS':
+        case 'LOADING_DISCUSSIONS':
             return { loading: true, discussions: [] };
 
-        case 'FETCH_CATS':
+        case 'FETCH_DISCUSSIONS':
             return { loading: false, discussions: action.payload };
         
         default:

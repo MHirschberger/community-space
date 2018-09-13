@@ -1,24 +1,8 @@
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
-export default function manageComments(state={discussions: [], comments:[]}, action) {
+export default function manageComments(state={loading: false, comments:[]}, action) {
     switch(action.type) {
-        case 'ADD_DISCUSSION' :
-            const discussion = {
-                id: cuid(),
-                text: action.text
-            }
-            return { ...state, discussions: [...state.discussions, discussion]}
-        
-        case 'DELETE_DISCUSSION':
-            return { ...state, discussions: state.discussions.filter(discussion => discussion.id !== action.id) }
-
-        case 'FETCH_DISCUSSIONS':
-        case 'LOADING_CATS':
-        return { loading: true, pictures: [] };
-
-    case 'FETCH_CATS':
-        return { loading: false, pictures: action.payload };
         
         case 'ADD_COMMENT':
             const discussionIdsArray = state.discussions.map(discussion => discussion.id);
@@ -35,6 +19,12 @@ export default function manageComments(state={discussions: [], comments:[]}, act
                
         case 'DELETE_COMMENT':
             return { ...state, comments: state.comments.filter(comment => comment.id !== action.id) }
+
+        case 'LOADING_COMMENTS':
+            return { loading: true, comments: [] };
+
+        case 'FETCH_COMMENTS':
+            return { loading: false, comments: action.payload };
         
         default:
             return state;

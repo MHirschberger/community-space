@@ -1,8 +1,8 @@
 export const fetchDiscussions = () => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_DISCUSSIONS' });
-        return fetch('http://localhost:3001/discussions')
+        return fetch('/api/discussions.json')
             .then(response => response.json())
-            .then(discussions => dispatch({type: 'FETCH_DISCUSSIONS', payload: discussions }));
+            .then(discussions => dispatch({type: 'FETCH_DISCUSSIONS', payload: discussions }))
     }
 };
