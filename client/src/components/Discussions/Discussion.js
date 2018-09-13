@@ -13,7 +13,7 @@ class Discussion extends Component {
         <p>{discussion.text}</p>
         {/* <Link to={`/discussions/${this.props.discussion.id}/comments`}>See Comments</Link>
         <Route exact path={`/discussions/${this.props.discussion.id}/comments`} render={() => <CommentsContainer discussion={discussion} deleteDiscussion={this.props.deleteDiscussion} />} />    */}
-        <CommentsContainer discussion={discussion} deleteDiscussion={this.props.deleteDiscussion} /> 
+        {/* <CommentsContainer discussion={discussion} deleteDiscussion={this.props.deleteDiscussion} />  */}
       </div>
     );
   }

@@ -3,7 +3,7 @@ class DiscussionsController < ApplicationController
 
     def index
         @discussions = Discussion.all
-        render json: @discussions 
+        render json: @discussions.as_json(only: [:id, :text]) 
     end
 
     def new
@@ -12,10 +12,10 @@ class DiscussionsController < ApplicationController
 
     def create
         @discussion = Discussion.new(discussion_params)
-        @discussions = Discussion.all
+        #@discussions = Discussion.all
         
         if @discussion.save
-            render json: @discussions
+            render json: @discussion
         end
         # else
         #     @course = @post.course

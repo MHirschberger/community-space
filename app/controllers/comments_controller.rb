@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     def index
         @discussion = Discussion.find(params[:discussion_id])
         @comments = @discussion.comments
-        render json: @comments
+        render json: @comments.as_json(only: [:id, :text, :discussion_id]) 
         @comment = Comment.new(discussion_id: params[:discussion_id])
     end
 
@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
 
     def show
         @comment = Comment.find_by(id: params[:id])
-        render json: @comment, include: ['discussion'] 
+        render json: @comment
     end
 
     def destroy
