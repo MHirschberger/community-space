@@ -1,3 +1,8 @@
+const headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  }
+
 export const fetchComments = (discussionId) => {
     return (dispatch) => {
         dispatch({ type: 'LOADING_COMMENTS' });
@@ -6,3 +11,17 @@ export const fetchComments = (discussionId) => {
             .then(comments => dispatch({type: 'FETCH_COMMENTS', payload: comments }))
     }
 };
+
+export const addComment = (text, discussionId) => {
+        return (dispatch) => {
+        dispatch({type: 'LOADING'});
+        return fetch(`/api/discussions/${discussionId}/comments`, {
+            method: "POST",
+            body: JSON.stringify({'comment':{text, discussion_id: discussionId}}),
+            headers
+        })
+            .then(response => response.json())
+            .then(comment => dispatch({type: 'ADD_COMMENT', payload: comment}))
+    }
+}
+

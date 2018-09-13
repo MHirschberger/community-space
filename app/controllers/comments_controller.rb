@@ -18,8 +18,7 @@ class CommentsController < ApplicationController
         @comment = Comment.new(comment_params)
 
         if @comment.save
-            @discussion = Discussion.find(@comment.discussion_id)
-            render json: @discussion 
+            render json: @comment.as_json(only: [:id, :text, :discussion_id])
         end
         # else
         #     @course = @post.course

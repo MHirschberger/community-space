@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Comments from '../components/Comments/Comments';
 import CommentInput from '../components/Comments/CommentInput';
 import { connect } from 'react-redux';
-import { fetchComments } from '../actions/commentActions';
+import { fetchComments, addComment } from '../actions/commentActions';
 
 class CommentsContainer extends Component {
 
@@ -20,7 +20,7 @@ class CommentsContainer extends Component {
     return (
       <div>
         {/* {this.props.discussion.text} */}
-        <button onClick={() => this.props.deleteDiscussion(discussionId)}> Delete </button>
+        <button onClick={() => this.props.deleteDiscussion(discussionId)}> Delete Discussion</button>
         {this.props.comments.length > 0 ? <Comments comments={this.props.comments} deleteComment={this.props.deleteComment} /> : null}
         <CommentInput addComment={this.props.addComment} discussionId={discussionId} />
       </div>
@@ -33,7 +33,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    addComment: (text, discussionId) => dispatch({type: 'ADD_COMMENT', comment: {text, discussionId}}),
+    addComment: (text, discussionId) => dispatch(addComment(text, discussionId)),
     deleteComment: id => dispatch({type: 'DELETE_COMMENT', id}),
     fetchComments: discussionId => dispatch(fetchComments(discussionId))
 })

@@ -13,7 +13,6 @@ export const fetchDiscussions = () => {
 };
 
 export const addDiscussion = discussion => {
-    console.log(JSON.stringify({discussion}))
     return (dispatch) => {
         dispatch({type: 'LOADING'});
         return fetch('/api/discussions', {
@@ -22,6 +21,6 @@ export const addDiscussion = discussion => {
             headers
         })
             .then(response => response.json())
-            .then(discussion => dispatch({type: 'ADD_DISCUSSIONS', payload: discussion}))
+            .then(discussion => dispatch({type: 'ADD_DISCUSSION', payload: discussion}))
     }
 }
