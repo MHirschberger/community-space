@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 export default class CommentInput extends Component {
 
     state = {
-        text: ''
+        text: '',
+        error: false
       }
       
     handleChange = event => {
@@ -14,10 +15,20 @@ export default class CommentInput extends Component {
     
     handleSubmit = event => {
         event.preventDefault();
-        this.props.addComment(this.state.text, this.props.discussionId);
+        this.props.addComment(this.state.text, this.props.discussionId)
+        .then(this.checkForErrors.bind(this));
+    }
+
+    checkForErrors = () => {
         this.setState({
-            text: ''
-        })
+            text: '',
+            error: false
+        });
+        if (this.props.comments.errors.length > 0) {
+            this.setState({
+                error: true
+            })
+        }
     }
 
     render() {

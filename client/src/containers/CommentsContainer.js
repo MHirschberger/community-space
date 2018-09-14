@@ -21,7 +21,7 @@ class CommentsContainer extends Component {
         </div>
         <div className='comments-list'>
           <Comments comments={this.props.comments} deleteComment={this.props.deleteComment} />
-          <CommentInput addComment={this.props.addComment} discussionId={discussionId} />
+          <CommentInput addComment={this.props.addComment} discussionId={discussionId} comments={this.props.comments}/>
         </div>
       </div>
     )
