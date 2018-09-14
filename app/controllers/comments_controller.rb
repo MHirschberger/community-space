@@ -1,3 +1,5 @@
+require 'pry'
+
 class CommentsController < ApplicationController
 
     # skip_before_action :verify_authenticity_token
@@ -39,6 +41,7 @@ class CommentsController < ApplicationController
     def destroy
         @comment = Comment.find_by(id: params[:id])
         @comment.destroy
+        render json: @comment.as_json(only: [:id])
     end
 
     private

@@ -11,7 +11,7 @@ export default function manageComments(state={loading: false, comments:[]}, acti
             return { ...state, loading: false, comments: [...state.comments, action.payload]}
                
         case 'DELETE_COMMENT':
-            return { ...state, loading: false, comments: state.comments.filter(comment => comment.id !== action.id) }
+            return { ...state, loading: false, comments: state.comments.filter(comment => comment.id !== action.payload.id) }
 
         case 'FETCH_COMMENTS':
             return { loading: false, comments: action.payload };

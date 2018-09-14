@@ -25,3 +25,16 @@ export const addComment = (text, discussionId) => {
     }
 }
 
+export const deleteComment = (commentId) => {
+    return (dispatch) => {
+    dispatch({type: 'LOADING'});
+    return fetch(`/api/comments/${commentId}`, {
+        method: "DELETE",
+        body: JSON.stringify({'comment':{id: commentId}}),
+        headers
+    })
+        .then(response => response.json())
+        .then(comment => dispatch({type: 'DELETE_COMMENT', payload: comment}))
+}
+}
+
