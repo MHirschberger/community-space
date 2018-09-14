@@ -8,7 +8,13 @@ export default function manageComments(state={loading: false, comments:[]}, acti
             return { loading: true, comments: [] };
         
         case 'ADD_COMMENT':
-            return { ...state, loading: false, comments: [...state.comments, action.payload]}
+            if (action.payload.id && action.payload.text) {
+                return { loading: false, comments: [...state.comments, action.payload], errors: []};
+            } else if (!action.payload.id && action.payload.text){
+                return { ...state, errors: action.payload.text };
+            } else {
+                return state;
+            }
                
         case 'DELETE_COMMENT':
             return { ...state, loading: false, comments: state.comments.filter(comment => comment.id !== action.payload.id) }

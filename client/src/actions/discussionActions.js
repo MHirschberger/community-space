@@ -17,7 +17,7 @@ export const fetchDiscussion = (discussionId) => {
     dispatch({type: 'LOADING'});
         return fetch(`/api/discussions/${discussionId}`)
             .then(response => response.json())
-            .then(comment => dispatch({type: 'FETCH_DISCUSSION', payload: comment}))
+            .then(discussion => dispatch({type: 'FETCH_DISCUSSION', payload: discussion}))
     }
 }
 
