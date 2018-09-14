@@ -21,16 +21,9 @@ class CommentsController < ApplicationController
 
         if @comment.save
             render json: @comment.as_json(only: [:id, :text, :discussion_id])
+        else
+            render json: @comment.errors, status: :unprocessable_entity
         end
-        # else
-        #     @course = @post.course
-        #     @posts = @course.posts.order(id: :desc)
-        #     respond_to do |format|
-        #         format.html { render 'index' }
-        #         format.json { render json: @post.errors, status: :unprocessable_entity }
-        #     end
-
-        # end
     end
 
     def show
