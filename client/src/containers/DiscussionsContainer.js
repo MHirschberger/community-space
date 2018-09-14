@@ -12,7 +12,7 @@ class DiscussionsContainer extends Component {
   render() {
     return (
       <div>
-        {this.props.discussions.length > 0 ? <Discussions discussions={this.props.discussions} deleteDiscussion={this.props.deleteDiscussion}/> : null}
+        {this.props.discussions.length > 0 ? <Discussions discussions={this.props.discussions} /> : null}
       </div>
     )
   }
@@ -23,7 +23,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  deleteDiscussion: id => dispatch({type: 'DELETE_DISCUSSION', id}),
   fetchDiscussions: () => dispatch(fetchDiscussions())
 })
 

@@ -5,7 +5,7 @@ export default function manageComments(state={loading: false, comments:[]}, acti
     switch(action.type) {
 
         case 'LOADING':
-            return { ...state, loading: true};
+            return { loading: true, comments: [] };
         
         case 'ADD_COMMENT':
             return { ...state, loading: false, comments: [...state.comments, action.payload]}

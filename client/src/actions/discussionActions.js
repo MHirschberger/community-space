@@ -12,6 +12,15 @@ export const fetchDiscussions = () => {
     }
 };
 
+export const fetchDiscussion = (discussionId) => {
+    return (dispatch) => {
+    dispatch({type: 'LOADING'});
+        return fetch(`/api/discussions/${discussionId}`)
+            .then(response => response.json())
+            .then(comment => dispatch({type: 'FETCH_DISCUSSION', payload: comment}))
+    }
+}
+
 export const addDiscussion = discussion => {
     return (dispatch) => {
         dispatch({type: 'LOADING'});
@@ -24,3 +33,4 @@ export const addDiscussion = discussion => {
             .then(discussion => dispatch({type: 'ADD_DISCUSSION', payload: discussion}))
     }
 }
+

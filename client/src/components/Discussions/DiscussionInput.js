@@ -6,7 +6,8 @@ import { addDiscussion } from '../../actions/discussionActions';
 class DiscussionInput extends Component {
 
     state = {
-        text: ''
+        text: '',
+        error: false
       }
       
     handleChange = event => {
@@ -17,11 +18,22 @@ class DiscussionInput extends Component {
     
     handleSubmit = event => {
         event.preventDefault();
-        this.props.addDiscussion(this.state);
+        this.props.addDiscussion(this.state)
+        .then(this.checkForErrors.bind(this));
+    }
+
+    checkForErrors = () => {
         this.setState({
-            text: ''
-        })
-        this.props.history.push('/')
+            text: '',
+            error: false
+        });
+        if (this.props.errors.length > 0) {
+            this.setState({
+                error: true
+            })
+        } else {
+            this.props.history.push('/')
+        }
     }
 
     render() {
@@ -30,6 +42,7 @@ class DiscussionInput extends Component {
             <div>
                 <h1>Start a New Discussion</h1>
             </div>
+            {this.state.error ? <ul className='error-messages'><h3>Errors:</h3>{this.props.errors.map(error => <li>{error}</li>)}</ul> : null}
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <textarea name="text" value={this.state.text} onChange={this.handleChange}/><br></br>
@@ -41,9 +54,13 @@ class DiscussionInput extends Component {
     }
 }
 
+const mapStateToProps = state => ({
+    errors: state.discussions.errors
+})
+
 const mapDispatchToProps = dispatch => ({
     addDiscussion: discussion => dispatch(addDiscussion(discussion)),
 })
   
-export default withRouter(connect(null, mapDispatchToProps)(DiscussionInput));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DiscussionInput));
 

@@ -4,7 +4,7 @@ import Discussion from './Discussion';
 class Discussions extends Component {
   render() {
 
-    const discussions = this.props.discussions.map(discussion => <Discussion key={discussion.id} discussion={discussion} deleteDiscussion={this.props.deleteDiscussion}/>)
+    const discussions = this.props.discussions.map(discussion => <Discussion key={discussion.id} discussion={discussion} />)
     return(
       <div>
         {discussions}

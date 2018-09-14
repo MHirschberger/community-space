@@ -12,25 +12,17 @@ class DiscussionsController < ApplicationController
 
     def create
         @discussion = Discussion.new(discussion_params)
-        #@discussions = Discussion.all
         
         if @discussion.save
-            render json: @discussion
+            render json: @discussion.as_json(only: [:id, :text]) 
+        else
+            render json: @discussion.errors, status: :unprocessable_entity
         end
-        # else
-        #     @course = @post.course
-        #     @posts = @course.posts.order(id: :desc)
-        #     respond_to do |format|
-        #         format.html { render 'index' }
-        #         format.json { render json: @post.errors, status: :unprocessable_entity }
-        #     end
-
-        # end
     end
 
     def show
         @discussion = Discussion.find_by(id: params[:id])
-        render json: @discussion 
+        render json: @discussion.as_json(only: [:id, :text]) 
     end
 
     def destroy

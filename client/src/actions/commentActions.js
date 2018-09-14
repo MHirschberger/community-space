@@ -35,6 +35,6 @@ export const deleteComment = (commentId) => {
     })
         .then(response => response.json())
         .then(comment => dispatch({type: 'DELETE_COMMENT', payload: comment}))
-}
+    }
 }
 

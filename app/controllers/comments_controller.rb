@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     def index
         @discussion = Discussion.find(params[:discussion_id])
         @comments = @discussion.comments
-        render json: @comments.as_json(only: [:id, :text, :discussion_id]) 
+        render json: @comments.as_json(only: [:id, :text, :discussion_id], include: 'discussion') 
         @comment = Comment.new(discussion_id: params[:discussion_id])
     end
 
