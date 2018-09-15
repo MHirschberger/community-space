@@ -4,7 +4,7 @@ export const cuidFn = cuid;
 export default function manageDiscussions(state={loading: false, discussions: [], errors: []}, action) {
     switch(action.type) {
 
-        case 'LOADING':
+        case 'LOADING_DISCUSSION':
             return { ...state, loading: true };
 
         case 'ADD_DISCUSSION':

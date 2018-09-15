@@ -5,7 +5,7 @@ const headers = {
 
 export const fetchDiscussions = () => {
     return (dispatch) => {
-        dispatch({ type: 'LOADING' });
+        dispatch({ type: 'LOADING_DISCUSSION' });
         return fetch('/api/discussions.json')
             .then(response => response.json())
             .then(discussions => dispatch({type: 'FETCH_DISCUSSIONS', payload: discussions }))
@@ -14,7 +14,7 @@ export const fetchDiscussions = () => {
 
 export const fetchDiscussion = (discussionId) => {
     return (dispatch) => {
-    dispatch({type: 'LOADING'});
+    dispatch({type: 'LOADING_DISCUSSION'});
         return fetch(`/api/discussions/${discussionId}`)
             .then(response => response.json())
             .then(discussion => dispatch({type: 'FETCH_DISCUSSION', payload: discussion}))

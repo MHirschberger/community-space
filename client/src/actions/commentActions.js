@@ -14,7 +14,7 @@ export const fetchComments = (discussionId) => {
 
 export const addComment = (text, discussionId) => {
         return (dispatch) => {
-        dispatch({type: 'LOADING'});
+        dispatch({type: 'LOADING_COMMENTS'});
         return fetch(`/api/discussions/${discussionId}/comments`, {
             method: "POST",
             body: JSON.stringify({'comment':{text, discussion_id: discussionId}}),

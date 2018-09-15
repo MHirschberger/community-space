@@ -21,7 +21,7 @@ class CommentsContainer extends Component {
         </div>
         <div className='comments-list'>
           <Comments comments={this.props.comments} deleteComment={this.props.deleteComment} />
-          <CommentInput addComment={this.props.addComment} discussionId={discussionId} comments={this.props.comments}/>
+          <CommentInput addComment={this.props.addComment} discussionId={discussionId} errors={this.props.commentErrors}/>
         </div>
       </div>
     )
@@ -30,7 +30,8 @@ class CommentsContainer extends Component {
 
 const mapStateToProps = state => ({
     comments: state.comments.comments,
-    discussion: state.discussions.discussions
+    discussion: state.discussions.discussions,
+    commentErrors: state.comments.errors
 })
 
 const mapDispatchToProps = dispatch => ({

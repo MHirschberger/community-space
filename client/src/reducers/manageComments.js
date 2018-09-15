@@ -4,8 +4,8 @@ export const cuidFn = cuid;
 export default function manageComments(state={loading: false, comments:[], errors: []}, action) {
     switch(action.type) {
 
-        case 'LOADING':
-            return { loading: true, comments: [] };
+        case 'LOADING_COMMENTS':
+            return { ...state, loading: true };
         
         case 'ADD_COMMENT':
             if (action.payload.id && action.payload.text) {
