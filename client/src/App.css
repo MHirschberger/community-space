@@ -74,5 +74,13 @@ body {
   font-weight: bold;
 }
 
+.about-page {
+  font-size: 1.25em;
+  font-weight: bold;
+  box-sizing: border-box;
+  width: 40%;
+  margin: 40px auto;
+}
+
 
 

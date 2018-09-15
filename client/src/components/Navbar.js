@@ -14,6 +14,24 @@ const link = {
     <div>
       <NavLink
         className='navbar'
+        to="/"
+        exact
+        style={link}
+        activeStyle={{
+          background: '#4169E1'
+        }}
+      >Home</NavLink>
+      <NavLink
+        className='navbar'
+        to="/about"
+        exact
+        style={link}
+        activeStyle={{
+          background: '#4169E1'
+        }}
+      >About</NavLink>
+      <NavLink
+        className='navbar'
         to="/discussions"
         exact
         style={link}
