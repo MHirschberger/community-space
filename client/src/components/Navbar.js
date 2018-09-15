@@ -14,7 +14,7 @@ const link = {
     <div>
       <NavLink
         className='navbar'
-        to="/"
+        to="/discussions"
         exact
         style={link}
         activeStyle={{
@@ -23,7 +23,7 @@ const link = {
       >All Discussions</NavLink>
       <NavLink
         className='navbar'
-        to="/new"
+        to="/discussions/new"
         exact
         style={link}
         activeStyle={{
