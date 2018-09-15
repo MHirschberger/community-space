@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Discussion extends Component {
 
@@ -8,8 +8,8 @@ class Discussion extends Component {
     const { discussion } = this.props;
 
     return (
-      <div className='discussion-link'>
-        <Link className='link' to={`/discussions/${this.props.discussion.id}/comments`} style={{ textDecoration: 'none' }}>{discussion.text}</Link>
+      <div className='discussion-link-div'>
+        <NavLink className='discussion-link' to={`/discussions/${this.props.discussion.id}/comments`} style={{ textDecoration: 'none' }}>{discussion.text}</NavLink>
       </div>
     );
   }

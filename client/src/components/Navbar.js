@@ -5,27 +5,29 @@ const link = {
     width: '100px',
     padding: '12px',
     margin: '0 6px 6px',
-    background: 'blue',
-    textDecoration: 'blue',
-    color: 'white'
+    background: '#191970',
+    textDecoration: '#191970',
+    color: 'white',
   }
   
   const Navbar = () =>
     <div>
       <NavLink
+        className='navbar'
         to="/"
         exact
         style={link}
         activeStyle={{
-          background: 'darkblue'
+          background: '#4169E1'
         }}
-      >Home</NavLink>
+      >All Discussions</NavLink>
       <NavLink
+        className='navbar'
         to="/new"
         exact
         style={link}
         activeStyle={{
-          background: 'darkblue'
+          background: '#4169E1'
         }}
       >Start New Discussion</NavLink>
     </div>;
