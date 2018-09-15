@@ -45,7 +45,7 @@ class DiscussionInput extends Component {
             {this.state.error ? <ul className='error-messages'><h3>Errors:</h3>{this.props.errors.map(error => <li>{error}</li>)}</ul> : null}
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <textarea name="text" value={this.state.text} onChange={this.handleChange}/><br></br>
+                    <textarea rows="4" cols="40" name="text" value={this.state.text} onChange={this.handleChange}/><br></br>
                     <input type="submit" />
                 </form>
             </div>

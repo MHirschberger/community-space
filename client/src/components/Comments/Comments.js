@@ -8,9 +8,9 @@ export default class Comments extends Component {
     const comments = this.props.comments.map(comment => <Comment key={comment.id} comment={comment} deleteComment={this.props.deleteComment}/>)
 
     return (
-      <ul>
+      <div>
         {comments}
-      </ul>
+      </div>
     );
   }
 };

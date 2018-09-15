@@ -7,10 +7,10 @@ export default class Comment extends Component {
 
     return (
       <div>
-        <li>
+        <p className='comment'>
           {comment.text}
-        </li>
-        <button onClick={() => this.props.deleteComment(this.props.comment.id)}> Delete This Comment </button>
+        </p>
+        <button className='delete-comment' onClick={() => this.props.deleteComment(this.props.comment.id)}> Delete Comment </button>
       </div>
     );
   }

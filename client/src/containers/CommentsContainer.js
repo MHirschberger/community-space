@@ -17,10 +17,16 @@ class CommentsContainer extends Component {
     return (
       <div>
         <div className='discussion-text'>
+          <p>Discussion:</p>
           <p>{this.props.discussion.text}</p>
+        </div>
+        <div className='comments-list-header'>
+          <p>Comments:</p>
         </div>
         <div className='comments-list'>
           <Comments comments={this.props.comments} deleteComment={this.props.deleteComment} />
+        </div>
+        <div className='comment-form'>
           <CommentInput addComment={this.props.addComment} discussionId={discussionId} errors={this.props.commentErrors}/>
         </div>
       </div>

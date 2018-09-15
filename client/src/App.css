@@ -1,5 +1,5 @@
 body {
-  background-color: #DCDCDC;
+  background-color: #E8E8E8;
   font-family: 'Courier New', Courier, monospace
 }
 
@@ -38,13 +38,11 @@ body {
 .discussion-link-div {
   box-sizing: border-box;
   width: 25%;
-  border-bottom: 2px solid black;
+  border-bottom: 1.5px solid black;
   position: relative;
   padding: 15px 0;
   margin: 0 auto;
 }
-
-
 
 .navbar {
   border-radius: 5px;
@@ -52,6 +50,28 @@ body {
 
 .home-title {
   margin-bottom: 50px;
+}
+
+.comment-form {
+  margin-top: 50px;
+}
+
+.comments-list-header {
+  margin-top: 50px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.delete-comment {
+  margin-bottom: 20px;
+}
+
+.comment {
+  margin-bottom: 8px;
+}
+
+.add-comment-header {
+  font-weight: bold;
 }
 
 

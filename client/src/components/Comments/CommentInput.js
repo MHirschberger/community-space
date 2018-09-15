@@ -23,13 +23,13 @@ export default class CommentInput extends Component {
     render() {
         return (
         <div>
-            <div>
+            <div className='add-comment-header'>
                 <p>Add Comment to Discussion</p>
             </div>
             {this.props.errors && this.props.errors.length > 0 ? <ul className='error-messages'><h3>Errors:</h3>{this.props.errors.map(error => <li>{error}</li>)}</ul> : null}
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <textarea name="text" value={this.state.text} onChange={this.handleChange}/><br></br>
+                    <textarea rows="4" cols="40" name="text" value={this.state.text} onChange={this.handleChange}/><br></br>
                     <input type="submit" />
                 </form>
             </div>
