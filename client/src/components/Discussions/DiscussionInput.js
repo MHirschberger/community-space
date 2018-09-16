@@ -32,7 +32,7 @@ class DiscussionInput extends Component {
                 error: true
             })
         } else {
-            this.props.history.push('/')
+            this.props.history.push('/discussions')
         }
     }
 
@@ -42,7 +42,8 @@ class DiscussionInput extends Component {
             <div>
                 <h1>Start a New Discussion</h1>
             </div>
-            {this.state.error ? <ul className='error-messages'><h3>Errors:</h3>{this.props.errors.map(error => <li>{error}</li>)}</ul> : null}
+            {this.state.error ? <div className='error-messages'><h3>Errors:</h3>{this.props.errors.map((error, index) => <li key={index}>{error}</li>)}</div> : null}
+            <br></br>
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <textarea rows="4" cols="40" name="text" value={this.state.text} onChange={this.handleChange}/><br></br>

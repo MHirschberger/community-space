@@ -38,7 +38,7 @@ const link = {
         activeStyle={{
           background: '#4169E1'
         }}
-      >All Discussions</NavLink>
+      >Browse Discussions</NavLink>
       <NavLink
         className='navbar'
         to="/discussions/new"
