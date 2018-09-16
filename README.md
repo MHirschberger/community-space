@@ -1,24 +1,17 @@
-# README
+# University Universe
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Community Space is a social app where users can start discussions on a topic of their choosing or comment on an existing discussion topic. 
 
-Things you may want to cover:
+## Installation and Usage
 
-* Ruby version
+To use this app, clone this repository, run `bundle && cd client && npm i && cd ..`, then run `rake db:migrate`, run `rake db:seed` and then run `rake start` to start up the servers. 
 
-* System dependencies
+Everything should be set up.
 
-* Configuration
+## Contributing
 
-* Database creation
+Bug reports and pull requests are welcome on GitHub at https://github.com/MHirschberger/community-space. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* Database initialization
+## License
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
