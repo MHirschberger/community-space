@@ -1,4 +1,4 @@
-# University Universe
+# Community Space
 
 Community Space is a social app where users can start discussions on a topic of their choosing or comment on an existing discussion topic. 
 
