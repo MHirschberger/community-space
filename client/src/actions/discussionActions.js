@@ -30,7 +30,9 @@ export const addDiscussion = discussion => {
             headers
         })
             .then(response => response.json())
-            .then(discussion => dispatch({type: 'ADD_DISCUSSION', payload: discussion}))
+            .then(discussion => {
+                dispatch({type: 'ADD_DISCUSSION', payload: discussion})
+            })
     }
 }
 
