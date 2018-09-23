@@ -10,9 +10,9 @@ class User < ApplicationRecord
     #validates_confirmation_of :password, :if => :password_present?
     #validates_presence_of :password, :on => :create, :unless => :facebook_user?
 
-    def password_present?
-        not password.nil?
-    end
+    # def password_present?
+    #     not password.nil?
+    # end
     
     # def facebook_user?
     #     not uid.nil? 
