@@ -7,6 +7,7 @@ import { Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import DiscussionInput from './components/Discussions/DiscussionInput';
 import CommentsContainer from './containers/CommentsContainer';
+import Login from './components/Login';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
           <Route exact path="/discussions" component={AllDiscussions} />
           <Route exact path="/discussions/new" component={DiscussionInput} />
           <Route exact path="/discussions/:discussion_id/comments" component={CommentsContainer} />
+          <Route exact path="/login" component={Login} />
         </div>
       </div>
     );

@@ -48,6 +48,15 @@ const link = {
           background: '#4169E1'
         }}
       >Start New Discussion</NavLink>
+      <NavLink
+        className='navbar'
+        to="/login"
+        exact
+        style={link}
+        activeStyle={{
+          background: '#4169E1'
+        }}
+      >Login</NavLink>
     </div>;
 
     export default Navbar;
