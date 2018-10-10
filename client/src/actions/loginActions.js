@@ -5,15 +5,15 @@ const headers = {
 
 export const createSession = credentials => {
     return (dispatch) => {
-        dispatch({type: 'LOADING'});
+        dispatch({type: 'LOADING PAGE'});
         return fetch('/api/login', {
             method: "POST",
             body: JSON.stringify({credentials}),
             headers
         })
             .then(response => response.json())
-            .then(discussion => {
-                dispatch({type: 'CREATE_SESSION', payload: discussion})
+            .then(user => {
+                dispatch({type: 'CREATE_SESSION', payload: user})
             })
     }
 }
