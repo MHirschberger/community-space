@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
-export default class Login extends Component {
+
+class Login extends Component {
 
     state = {
         email: '',
         password: '',
         loggedIn: false
+    }
+
+    handleChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+    
+    handleSubmit = event => {
+        event.preventDefault();
+
     }
 
 
@@ -28,3 +42,13 @@ export default class Login extends Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    errors: state.discussions.errors
+})
+
+const mapDispatchToProps = dispatch => ({
+    addDiscussion: discussion => dispatch(addDiscussion(discussion)),
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
