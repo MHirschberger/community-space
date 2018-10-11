@@ -17,3 +17,17 @@ export const createSession = (email, password) => {
             })
     }
 }
+
+export const deleteSession = () => {
+    return (dispatch) => {
+        dispatch({type: 'LOADING PAGE'});
+        return fetch('/api/logout', {
+            method: "DELETE",
+            headers
+        })
+            //.then(response => response.json())
+            .then(() => {
+                dispatch({type: 'DELETE_SESSION'})
+            })
+    }
+}

@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         @user = User.find_by(email: params[:email])
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            render json: @user
+            render json: @user.as_json(only: [:id, :name, :email])
         else
             render json: @user.errors, status: :unprocessable_entity
         end
@@ -22,7 +22,6 @@ class SessionsController < ApplicationController
 
     def destroy
         session.delete :user_id
-        redirect_to root_url
     end
 
 end
