@@ -20,11 +20,12 @@ class Login extends Component {
     
     handleSubmit = event => {
         event.preventDefault();
-        this.props.createSession(this.state)
+        this.props.createSession(this.state.email, this.state.password)
         .then(this.checkForErrors.bind(this));
     }
 
     checkForErrors = () => {
+        debugger;
         this.setState({
             text: '',
             error: false
@@ -63,7 +64,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    createSession: credentials => dispatch(createSession(credentials)),
+    createSession: (email, password) => dispatch(createSession(email, password)),
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));

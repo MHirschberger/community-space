@@ -1,3 +1,5 @@
+require 'pry'
+
 class SessionsController < ApplicationController
     def new
         # if logged_in?
@@ -18,16 +20,9 @@ class SessionsController < ApplicationController
         # render 'users/show'
     end
 
-    end
-
     def destroy
-    session.delete :user_id
-    redirect_to root_url
+        session.delete :user_id
+        redirect_to root_url
     end
 
-    private
-
-    def auth
-    request.env['omniauth.auth']
-    end
 end

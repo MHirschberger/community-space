@@ -3,12 +3,12 @@ const headers = {
     'Content-Type': 'application/json'
 }
 
-export const createSession = credentials => {
+export const createSession = (email, password) => {
     return (dispatch) => {
         dispatch({type: 'LOADING PAGE'});
         return fetch('/api/login', {
             method: "POST",
-            body: JSON.stringify({credentials}),
+            body: JSON.stringify({email: email, password: password}),
             headers
         })
             .then(response => response.json())
