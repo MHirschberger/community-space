@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import DiscussionInput from './components/Discussions/DiscussionInput';
 import CommentsContainer from './containers/CommentsContainer';
 import Login from './components/Sessions/Login';
+import Logout from './components/Sessions/Logout';
 
 class App extends Component {
   render() {

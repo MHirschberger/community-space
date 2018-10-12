@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { createSession, deleteSession } from '../../actions/sessionActions';
+import { createSession } from '../../actions/sessionActions';
 
 class Login extends Component {
 
@@ -25,7 +25,6 @@ class Login extends Component {
     }
 
     checkForErrors = () => {
-        debugger;
         this.setState({
             text: '',
             error: false
@@ -45,7 +44,8 @@ class Login extends Component {
             <React.Fragment>
                 {isLoggedIn ? 
                 <div className='message'>
-                    <h1>You are currently logged in as {this.props.currentUser}</h1>
+                    <h1>You are currently logged in as {this.props.currentUser.name}</h1>
+                    
                 </div> : 
                     <div className='login-form'>
                         <h1>Login to Your Account</h1>
@@ -73,8 +73,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    createSession: (email, password) => dispatch(createSession(email, password)),
-    deleteSession: () => dispatch(deleteSession())
+    createSession: (email, password) => dispatch(createSession(email, password))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));

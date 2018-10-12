@@ -12,6 +12,7 @@ export const createSession = (email, password) => {
             headers
         })
             .then(response => response.json())
+            //.then(user => console.log(user))
             .then(user => {
                 dispatch({type: 'CREATE_SESSION', payload: user})
             })
