@@ -25,7 +25,6 @@ class App extends Component {
           <Route exact path="/discussions/new" component={DiscussionInput} />
           <Route exact path="/discussions/:discussion_id/comments" component={CommentsContainer} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/logout" component={Logout} />
         </div>
       </div>
     );
