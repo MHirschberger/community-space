@@ -7,6 +7,14 @@ class SessionsController < ApplicationController
         # end
     end
 
+    def is_signed_in?
+        if user_signed_in?
+          render :json => {"signed_in" => true, "user" => current_user}.to_json()
+        else
+          render :json => {"signed_in" => false}.to_json()
+        end
+    end
+
     def create
         @user = User.find_by(email: params[:email])
         if @user && @user.authenticate(params[:password])

@@ -9,8 +9,24 @@ import DiscussionInput from './components/Discussions/DiscussionInput';
 import CommentsContainer from './containers/CommentsContainer';
 import Login from './components/Sessions/Login';
 import Logout from './components/Sessions/Logout';
+import $ from 'jquery';
 
 class App extends Component {
+
+  state = {
+    signedIn: null
+  }
+
+  componentWillMount() {
+    $.ajax({
+      method: "GET",
+      url: "/api/auth/is_signed_in.json"
+    })
+    .done(function(data){
+      this.setState({ signedIn: data.signed_in });
+    }.bind(this));
+  }
+
   render() {
     return (
       <div className="App">
@@ -19,12 +35,12 @@ class App extends Component {
           <Navbar />
         </header>
         <div className="App-body">
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/discussions" component={AllDiscussions} />
-          <Route exact path="/discussions/new" component={DiscussionInput} />
-          <Route exact path="/discussions/:discussion_id/comments" component={CommentsContainer} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/" render={(props) => <Home {...props} signedIn={this.state.signedIn} />} />
+          <Route exact path="/about" render={(props) => <About {...props} signedIn={this.state.signedIn} />} />
+          <Route exact path="/discussions" render={(props) => <AllDiscussions {...props} signedIn={this.state.signedIn} />} />
+          <Route exact path="/discussions/new" render={(props) => <DiscussionInput {...props} signedIn={this.state.signedIn} />} />
+          <Route exact path="/discussions/:discussion_id/comments" render={(props) => <CommentsContainer {...props} signedIn={this.state.signedIn} />} />
+          <Route exact path="/login"   render={(props) => <Login {...props} signedIn={this.state.signedIn} />} />
         </div>
       </div>
     );
