@@ -40,7 +40,7 @@ class App extends Component {
           <Route exact path="/discussions" render={(props) => <AllDiscussions {...props} signedIn={this.state.signedIn} />} />
           <Route exact path="/discussions/new" render={(props) => <DiscussionInput {...props} signedIn={this.state.signedIn} />} />
           <Route exact path="/discussions/:discussion_id/comments" render={(props) => <CommentsContainer {...props} signedIn={this.state.signedIn} />} />
-          <Route exact path="/login"   render={(props) => <Login {...props} signedIn={this.state.signedIn} />} />
+          <Route exact path="/login" render={(props) => <Login {...props} signedIn={this.state.signedIn} />} />
         </div>
       </div>
     );
