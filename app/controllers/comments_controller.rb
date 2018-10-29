@@ -12,7 +12,9 @@ class CommentsController < ApplicationController
         @comment = Comment.new(discussion_id: params[:discussion_id])
     end
 
-    
+    def new
+        @comment = Comment.new(discussion_id: params[:discussion_id])
+    end
 
     def create
         @comment = Comment.new(comment_params)
