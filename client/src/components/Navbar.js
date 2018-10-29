@@ -49,7 +49,7 @@ const Navbar = () =>
         background: '#4169E1'
       }}
     >Start New Discussion</NavLink>
-    <NavLink
+    {/* <NavLink
       className='navbar'
       to="/login"
       exact
@@ -57,7 +57,7 @@ const Navbar = () =>
       activeStyle={{
         background: '#4169E1'
       }}
-      >Login/Account</NavLink>
+      >Login/Account</NavLink> */}
     </div>
   
 

@@ -13,19 +13,19 @@ import $ from 'jquery';
 
 class App extends Component {
 
-  state = {
-    signedIn: null
-  }
+  // state = {
+  //   signedIn: null
+  // }
 
-  componentWillMount() {
-    $.ajax({
-      method: "GET",
-      url: "/api/auth/is_signed_in.json"
-    })
-    .done(function(data){
-      this.setState({ signedIn: data.signed_in });
-    }.bind(this));
-  }
+  // componentWillMount() {
+  //   $.ajax({
+  //     method: "GET",
+  //     url: "/api/auth/is_signed_in.json"
+  //   })
+  //   .done(function(data){
+  //     this.setState({ signedIn: data.signed_in });
+  //   }.bind(this));
+  // }
 
   render() {
     return (
@@ -35,12 +35,12 @@ class App extends Component {
           <Navbar />
         </header>
         <div className="App-body">
-          <Route exact path="/" render={(props) => <Home {...props} signedIn={this.state.signedIn} />} />
-          <Route exact path="/about" render={(props) => <About {...props} signedIn={this.state.signedIn} />} />
-          <Route exact path="/discussions" render={(props) => <AllDiscussions {...props} signedIn={this.state.signedIn} />} />
-          <Route exact path="/discussions/new" render={(props) => <DiscussionInput {...props} signedIn={this.state.signedIn} />} />
-          <Route exact path="/discussions/:discussion_id/comments" render={(props) => <CommentsContainer {...props} signedIn={this.state.signedIn} />} />
-          <Route exact path="/login" render={(props) => <Login {...props} signedIn={this.state.signedIn} />} />
+          <Route exact path="/" render={(props) => <Home {...props} />} />
+          <Route exact path="/about" render={(props) => <About {...props} />} />
+          <Route exact path="/discussions" render={(props) => <AllDiscussions {...props} />} />
+          <Route exact path="/discussions/new" render={(props) => <DiscussionInput {...props} />} />
+          <Route exact path="/discussions/:discussion_id/comments" render={(props) => <CommentsContainer {...props} />} />
+          <Route exact path="/login" render={(props) => <Login {...props} />} />
         </div>
       </div>
     );

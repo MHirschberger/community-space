@@ -7,14 +7,14 @@ Rails.application.routes.draw do
     end
     resources :comments, only: :destroy
 
-    get '/login', to: 'sessions#new'
-    post '/login', to: 'sessions#create'
+    # get '/login', to: 'sessions#new'
+    # post '/login', to: 'sessions#create'
   
-    delete '/logout', to: 'sessions#destroy'
+    # delete '/logout', to: 'sessions#destroy'
 
-    scope :auth do
-      get 'is_signed_in', to: 'sessions#is_signed_in?'
-    end
+    # scope :auth do
+    #   get 'is_signed_in', to: 'sessions#is_signed_in?'
+    # end
 
   end
 
