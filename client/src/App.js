@@ -37,8 +37,8 @@ class App extends Component {
         <div className="App-body">
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/discussions" render={(props) => <AllDiscussions {...props} />} />
-          <Route exact path="/discussions/new" render={(props) => <DiscussionInput {...props} />} />
+          <Route exact path="/discussions" component={AllDiscussions} />
+          <Route exact path="/discussions/new" component={DiscussionInput} />} />
           <Route exact path="/discussions/:discussion_id/comments" render={(props) => <CommentsContainer {...props} />} />
           <Route exact path="/login" render={(props) => <Login {...props} />} />
         </div>
