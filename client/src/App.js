@@ -39,8 +39,7 @@ class App extends Component {
           <Route exact path="/about" component={About} />
           <Route exact path="/discussions" component={AllDiscussions} />
           <Route exact path="/discussions/new" component={DiscussionInput} />} />
-          <Route exact path="/discussions/:discussion_id/comments" render={(props) => <CommentsContainer {...props} />} />
-          <Route exact path="/login" render={(props) => <Login {...props} />} />
+          <Route exact path="/discussions/:discussion_id/comments" component={CommentsContainer} />} />
         </div>
       </div>
     );
