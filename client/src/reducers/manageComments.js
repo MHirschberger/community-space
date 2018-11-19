@@ -1,6 +1,5 @@
-import cuid from 'cuid';
-export const cuidFn = cuid;
-
+//import cuid from 'cuid';
+//export const cuidFn = cuid;
 export default function manageComments(state={loading: false, comments:[], errors: []}, action) {
     switch(action.type) {
 
