@@ -13,10 +13,6 @@ import $ from 'jquery';
 
 class App extends Component {
 
-  // state = {
-  //   signedIn: null
-  // }
-
   // componentWillMount() {
   //   $.ajax({
   //     method: "GET",
@@ -38,8 +34,8 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/discussions" component={AllDiscussions} />
-          <Route exact path="/discussions/new" component={DiscussionInput} />} />
-          <Route exact path="/discussions/:discussion_id/comments" component={CommentsContainer} />} />
+          <Route exact path="/discussions/new" component={DiscussionInput} />
+          <Route exact path="/discussions/:discussion_id/comments" component={CommentsContainer} />
         </div>
       </div>
     );
