@@ -7,7 +7,6 @@ import { Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import DiscussionInput from './components/Discussions/DiscussionInput';
 import CommentsContainer from './containers/CommentsContainer';
-import Login from './components/Sessions/Login';
 
 class App extends Component {
 
