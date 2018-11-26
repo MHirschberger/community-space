@@ -9,7 +9,6 @@ import DiscussionInput from './components/Discussions/DiscussionInput';
 import CommentsContainer from './containers/CommentsContainer';
 import Login from './components/Sessions/Login';
 import Logout from './components/Sessions/Logout';
-import $ from 'jquery';
 
 class App extends Component {
 
