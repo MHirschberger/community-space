@@ -12,4 +12,4 @@ Comment.create([{text: 'Yeah, it was insane!', discussion_id: 1}, {text: 'Matthe
 {text: 'Pumpkin picking?', discussion_id: 2}, {text: 'Skydiving?', discussion_id: 2}, {text: 'Bike ride through Central Park', discussion_id: 2},
 {text: 'Cutting out soda from my diet', discussion_id: 3}, {text: 'Exercising for one hour 5 days per week', discussion_id: 3}, {text: 'Complete reading 1 book every two weeks.', discussion_id: 3}])
 
-User.create([{name: 'Dan', email: 'dan@dan.com', password: 'dan'}, {name: 'Mary', email: 'mary@mary.com', password: 'mary'}])
+#User.create([{name: 'Dan', email: 'dan@dan.com', password: 'dan'}, {name: 'Mary', email: 'mary@mary.com', password: 'mary'}])
